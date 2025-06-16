@@ -40,7 +40,7 @@ const AdjacentCard = styled.div<{ position: 'left' | 'right' }>`
 `;
 
 const CardContainer = styled(motion.div)`
-  width: 95%;
+  width: 100%;
   max-width: 800px;
   min-height: 500px;
   background: #f5f5f5;
@@ -51,12 +51,24 @@ const CardContainer = styled(motion.div)`
   position: relative;
   cursor: grab;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 15px;
+    min-height: 400px;
+  }
 `;
 
 const Title = styled.h2`
   color: #1976d2;
   margin-bottom: 20px;
   text-align: center;
+  font-size: 1.8em;
+
+  @media (max-width: 768px) {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
 `;
 
 const Section = styled.div`
@@ -68,6 +80,12 @@ const SectionTitle = styled.h3`
   margin-bottom: 24px;
   margin-top: 32px;
   font-size: 1.1em;
+
+  @media (max-width: 768px) {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
 `;
 
 const Sentence = styled.div<{ completed: boolean; bgcolor: string }>`
@@ -80,6 +98,11 @@ const Sentence = styled.div<{ completed: boolean; bgcolor: string }>`
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
+  @media (max-width: 768px) {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
   ${props => props.completed && `
     opacity: 0.7;
     text-decoration: line-through;
@@ -89,6 +112,12 @@ const Sentence = styled.div<{ completed: boolean; bgcolor: string }>`
 const SentenceContent = styled.div<{ completed: boolean }>`
   flex: 1;
   color: #222;
+  font-size: 1em;
+
+  @media (max-width: 768px) {
+    font-size: 0.85em;
+  }
+
   ${props => props.completed && `
     text-decoration: line-through;
     color: #666;
@@ -113,6 +142,12 @@ const Vocabulary = styled.div<{ bgcolor: string }>`
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #222;
+
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+    padding: 4px 6px;
+    min-height: 28px;
+  }
 `;
 
 const Checkbox = styled.input`
@@ -144,12 +179,18 @@ const ActionButton = styled.button<{ color: string; textcolor?: string }>`
   background-color: ${props => props.color};
   color: ${props => props.textcolor || 'white'};
   font-size: 1.1em;
-  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   gap: 8px;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
 
   &:hover {
     transform: translateY(-2px);
@@ -188,6 +229,12 @@ const RoleButton = styled(motion.button)`
   user-select: none;
   transition: all 0.2s ease;
   outline: none;
+
+  @media (max-width: 768px) {
+    min-width: 50px;
+    min-height: 28px;
+    font-size: 0.8em;
+  }
 `;
 
 interface PracticeCardProps {

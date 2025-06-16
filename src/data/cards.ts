@@ -355,5 +355,39 @@ export const practiceCards: PracticeCard[] = [
       { word: "spogliatoio", translation: "locker room" },
       { word: "iscrizione", translation: "enrollment" }
     ]
+  },
+  {
+    id: 11,
+    title: "IN SPIAGGIA",
+    roles: ["BAGNANTE", "GESTORE"],
+    sentences: [
+      {
+        text: "Vorresti chiedere se è possibile prenotare un ombrellone con due lettini per il giorno.",
+        translation: "Could you give me information about your monthly rates and membership plans?",
+        completed: false
+      },
+      {
+        text: "Vorresti sapere se il prezzo cambia in base al mese.",
+        translation: "What group classes do you offer and when?",
+        completed: false
+      },
+      {
+        text: "Vorresti chiedere se è possibile utilizzare il campo da pallavolo.",
+        translation: "Is it possible to book a private personal training session?",
+        completed: false
+      }
+    ],
+    vocabulary: [
+      { word: "utilizzare", translation: "membership" },
+      { word: "prenotare", translation: "rate" },
+      { word: "nuotare", translation: "private lesson" },
+      { word: "abbronzarsi", translation: "personal trainer" },
+      { word: "sdraio", translation: "weight room" },
+      { word: "lettino", translation: "group class" },
+      { word: "ombrellone", translation: "instructor" },
+      { word: "ristorantino", translation: "schedule" },
+      { word: "doccia", translation: "locker room" },
+      { word: "sconto", translation: "enrollment" }
+    ]
   }
 ];

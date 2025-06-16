@@ -40,12 +40,12 @@ const AdjacentCard = styled.div<{ position: 'left' | 'right' }>`
 `;
 
 const CardContainer = styled(motion.div)`
-  width: 90%;
-  max-width: 500px;
-  min-height: 700px;
+  width: 95%;
+  max-width: 800px;
+  min-height: 500px;
   background: #f5f5f5;
   border-radius: 20px;
-  padding: 20px;
+  padding: 30px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   margin: 20px auto;
   position: relative;

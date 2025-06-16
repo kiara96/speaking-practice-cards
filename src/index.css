@@ -12,6 +12,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
 }
 
 * {
@@ -26,6 +27,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  font-size: 14px;
 }
 
 ul {

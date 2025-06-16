@@ -42,7 +42,7 @@ const AdjacentCard = styled.div<{ position: 'left' | 'right' }>`
 const CardContainer = styled(motion.div)`
   width: 90%;
   max-width: 500px;
-  min-height: 600px;
+  min-height: 700px;
   background: #f5f5f5;
   border-radius: 20px;
   padding: 20px;

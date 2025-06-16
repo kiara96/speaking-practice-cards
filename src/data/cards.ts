@@ -61,7 +61,7 @@ export const practiceCards: PracticeCard[] = [
         completed: false
       },
       {
-        text: "Vorresti iscriversi alla biblioteca e chiedere quali documenti servono.",
+        text: "Vorresti iscriverti alla biblioteca e chiedere quali documenti servono.",
         translation: "I’d like to register for a library card; what documents do I need?",
         completed: false
       },
@@ -78,7 +78,7 @@ export const practiceCards: PracticeCard[] = [
       { word: "tessera", translation: "card" },
       { word: "scadenza", translation: "due date" },
       { word: "restituire", translation: "to return" },
-      { word: "bibliotecario", translation: "librarian" },
+      { word: "silenzio", translation: "librarian" },
       { word: "consultazione", translation: "consultation" },
       { word: "catalogo", translation: "catalog" },
       { word: "sala studio", translation: "study room" }
@@ -109,7 +109,7 @@ export const practiceCards: PracticeCard[] = [
       { word: "ricetta", translation: "prescription" },
       { word: "farmaco", translation: "medicine" },
       { word: "effetti collaterali", translation: "side effects" },
-      { word: "interazione", translation: "interaction" },
+      { word: "tessera sanitaria", translation: "interaction" },
       { word: "antinfiammatorio", translation: "anti-inflammatory" },
       { word: "pomata", translation: "ointment" },
       { word: "dosaggio", translation: "dosage" },
@@ -148,7 +148,7 @@ export const practiceCards: PracticeCard[] = [
       { word: "ufficio postale", translation: "post office" },
       { word: "francobollo", translation: "stamp" },
       { word: "modulo", translation: "form" },
-      { word: "tracking", translation: "tracking" },
+      { word: "prezzo", translation: "tracking" },
       { word: "ritiro", translation: "pickup" }
     ]
   },
@@ -211,8 +211,8 @@ export const practiceCards: PracticeCard[] = [
       { word: "prenotazione", translation: "reservation" },
       { word: "camera matrimoniale", translation: "double room" },
       { word: "colazione", translation: "breakfast" },
-      { word: "check-in", translation: "check-in" },
-      { word: "check-out", translation: "check-out" },
+      { word: "mezza pensione", translation: "check-in" },
+      { word: "tassa di soggiorno", translation: "check-out" },
       { word: "tariffa", translation: "rate" },
       { word: "chiave", translation: "key" },
       { word: "reception", translation: "reception" },
@@ -242,13 +242,13 @@ export const practiceCards: PracticeCard[] = [
       }
     ],
     vocabulary: [
-      { word: "biglietto", translation: "ticket" },
-      { word: "andata", translation: "one-way" },
-      { word: "ritorno", translation: "return" },
+      { word: "convalidare", translation: "ticket" },
+      { word: "viaggiare", translation: "one-way" },
+      { word: "rimandare", translation: "return" },
       { word: "binario", translation: "platform" },
       { word: "ritardo", translation: "delay" },
       { word: "orario", translation: "timetable" },
-      { word: "treno", translation: "train" },
+      { word: "vagone", translation: "train" },
       { word: "viaggio", translation: "journey" },
       { word: "prenotazione", translation: "reservation" },
       { word: "bigliettaio", translation: "ticket clerk" }
@@ -257,10 +257,10 @@ export const practiceCards: PracticeCard[] = [
   {
     id: 8,
     title: "DAL BANCO PIZZA DA ASPORTO",
-    roles: ["CLIENTE", "PIZZAIOLI"],
+    roles: ["CLIENTE", "PIZZAIOLO"],
     sentences: [
       {
-        text: "Vorresti ordinare una pizza margherita con doppia mozzarella.",
+        text: "Vorresti ordinare una pizza con fiori di zucca e burrata.",
         translation: "I’d like a Margherita pizza with extra mozzarella.",
         completed: false
       },
@@ -276,25 +276,25 @@ export const practiceCards: PracticeCard[] = [
       }
     ],
     vocabulary: [
-      { word: "asporto", translation: "takeaway" },
-      { word: "impasto", translation: "dough" },
-      { word: "mozzarella", translation: "mozzarella" },
+      { word: "prenotare", translation: "takeaway" },
+      { word: "cuocere", translation: "dough" },
+      { word: "tagliare", translation: "mozzarella" },
       { word: "condimenti", translation: "toppings" },
       { word: "forno a legna", translation: "wood-fired oven" },
       { word: "consegna", translation: "delivery" },
       { word: "cottura", translation: "cooking" },
       { word: "taglia", translation: "size" },
-      { word: "menu", translation: "menu" },
-      { word: "cliente", translation: "customer" }
+      { word: "asporto", translation: "menu" },
+      { word: "farina", translation: "customer" }
     ]
   },
   {
     id: 9,
-    title: "DAL TABACCAIO",
+    title: "ALL'EDICOLA",
     roles: ["CLIENTE", "TABACCAIO"],
     sentences: [
       {
-        text: "Vorresti comprare le sigarette e chiedere il prezzo del pacchetto.",
+        text: "Vorresti comprare l'ultima edizione di una rivista e chiedere il prezzo.",
         translation: "I’d like to buy cigarettes; what is the price per pack?",
         completed: false
       },
@@ -304,21 +304,21 @@ export const practiceCards: PracticeCard[] = [
         completed: false
       },
       {
-        text: "Vorresti chiedere dove si trovano le cartoline nella tabaccheria.",
+        text: "Vorresti chiedere se è possibile utilizzare il telefono per pagare.",
         translation: "Where can I find the postcards in the shop?",
         completed: false
       }
     ],
     vocabulary: [
-      { word: "sigarette", translation: "cigarettes" },
-      { word: "gratta e vinci", translation: "scratch-off tickets" },
-      { word: "cartoline", translation: "postcards" },
+      { word: "comprare", translation: "cigarettes" },
+      { word: "rivista", translation: "scratch-off tickets" },
+      { word: "cartolina", translation: "postcards" },
       { word: "lotteria", translation: "lottery" },
       { word: "accendino", translation: "lighter" },
-      { word: "schedina", translation: "betting slip" },
-      { word: "ricevuta", translation: "receipt" },
+      { word: "giornale", translation: "betting slip" },
+      { word: "allegato", translation: "receipt" },
       { word: "edicola", translation: "newsstand" },
-      { word: "cigarro", translation: "cigar" },
+      { word: "orari di apertura", translation: "cigar" },
       { word: "tabaccheria", translation: "tobacco shop" }
     ]
   },
@@ -333,23 +333,23 @@ export const practiceCards: PracticeCard[] = [
         completed: false
       },
       {
-        text: "Vorresti sapere quali corsi di gruppo offrite e gli orari disponibili.",
+        text: "Vorresti sapere quali corsi di gruppo vengono offerti e gli orari disponibili.",
         translation: "What group classes do you offer and when?",
         completed: false
       },
       {
-        text: "Vorresti chiedere se è possibile prenotare una lezione privata di personal trainer.",
+        text: "Vorresti chiedere se è possibile prenotare una lezione privata con una personal trainer.",
         translation: "Is it possible to book a private personal training session?",
         completed: false
       }
     ],
     vocabulary: [
-      { word: "abbonamento", translation: "membership" },
-      { word: "tariffa", translation: "rate" },
-      { word: "lezione privata", translation: "private lesson" },
-      { word: "personal trainer", translation: "personal trainer" },
-      { word: "sala pesi", translation: "weight room" },
-      { word: "lezione di gruppo", translation: "group class" },
+      { word: "allenarsi", translation: "membership" },
+      { word: "iscriversi", translation: "rate" },
+      { word: "impegnarsi", translation: "private lesson" },
+      { word: "attrezzi", translation: "personal trainer" },
+      { word: "lezioni", translation: "weight room" },
+      { word: "piscina", translation: "group class" },
       { word: "istruttore", translation: "instructor" },
       { word: "orario", translation: "schedule" },
       { word: "spogliatoio", translation: "locker room" },

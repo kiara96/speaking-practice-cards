@@ -80,7 +80,7 @@ Error generating stack: `+n.message+`
     opacity: 0.9;
   }
 `,mE=jt(q0.div)`
-  width: 95%;
+  width: 100%;
   max-width: 800px;
   min-height: 500px;
   background: #f5f5f5;
@@ -91,10 +91,22 @@ Error generating stack: `+n.message+`
   position: relative;
   cursor: grab;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 15px;
+    min-height: 400px;
+  }
 `,pE=jt.h2`
   color: #1976d2;
   margin-bottom: 20px;
   text-align: center;
+  font-size: 1.8em;
+
+  @media (max-width: 768px) {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
 `,Py=jt.div`
   margin-bottom: 32px;
 `,Jy=jt.h3`
@@ -102,6 +114,12 @@ Error generating stack: `+n.message+`
   margin-bottom: 24px;
   margin-top: 32px;
   font-size: 1.1em;
+
+  @media (max-width: 768px) {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
 `,yE=jt.div`
   display: flex;
   align-items: center;
@@ -112,6 +130,11 @@ Error generating stack: `+n.message+`
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
+  @media (max-width: 768px) {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
   ${a=>a.completed&&`
     opacity: 0.7;
     text-decoration: line-through;
@@ -119,6 +142,12 @@ Error generating stack: `+n.message+`
 `,gE=jt.div`
   flex: 1;
   color: #222;
+  font-size: 1em;
+
+  @media (max-width: 768px) {
+    font-size: 0.85em;
+  }
+
   ${a=>a.completed&&`
     text-decoration: line-through;
     color: #666;
@@ -139,6 +168,12 @@ Error generating stack: `+n.message+`
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #222;
+
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+    padding: 4px 6px;
+    min-height: 28px;
+  }
 `,SE=jt.input`
   margin-right: 10px;
   width: 20px;
@@ -162,12 +197,18 @@ Error generating stack: `+n.message+`
   background-color: ${a=>a.color};
   color: ${a=>a.textcolor||"white"};
   font-size: 1.1em;
-  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   gap: 8px;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
 
   &:hover {
     transform: translateY(-2px);
@@ -202,6 +243,12 @@ Error generating stack: `+n.message+`
   user-select: none;
   transition: all 0.2s ease;
   outline: none;
+
+  @media (max-width: 768px) {
+    min-width: 50px;
+    min-height: 28px;
+    font-size: 0.8em;
+  }
 `,EE=({card:a,onSwipeLeft:i,onSwipeUp:s,onSentenceComplete:o})=>{const[c,d]=X.useState(420),f=dE(a.id);X.useEffect(()=>{const p=setInterval(()=>{d(y=>y>0?y-1:0)},1e3);return()=>clearInterval(p)},[]);const m=fE({onSwipedLeft:i,onSwipedUp:s,trackMouse:!0}),g=p=>{const y=Math.floor(p/60),b=p%60;return`${y}:${b.toString().padStart(2,"0")}`};return lt.jsxs(hE,{children:[lt.jsx(Qy,{position:"left",onClick:i,style:{cursor:"pointer"}}),lt.jsx(t0,{mode:"wait",children:lt.jsxs(mE,{...m,initial:{x:300,opacity:0},animate:{x:0,opacity:1},exit:{x:-300,opacity:0},transition:{type:"spring",stiffness:300,damping:30},children:[lt.jsx(TE,{children:g(c)}),lt.jsx(pE,{children:a.title}),lt.jsxs(AE,{children:[lt.jsx($y,{initial:{y:-40,opacity:0},animate:{y:0,opacity:1},transition:{type:"spring",stiffness:400,damping:18,delay:.1},tabIndex:-1,children:a.roles[0]}),lt.jsx($y,{initial:{y:-40,opacity:0},animate:{y:0,opacity:1},transition:{type:"spring",stiffness:400,damping:18,delay:.25},tabIndex:-1,children:a.roles[1]})]}),lt.jsxs(Py,{children:[lt.jsx(Jy,{children:"FRASI DA UTILIZZARE:"}),a.sentences.map((p,y)=>lt.jsxs(yE,{completed:p.completed,bgcolor:f,children:[lt.jsx(SE,{type:"checkbox",checked:p.completed,onChange:()=>o(y)}),lt.jsx(gE,{completed:p.completed,children:lt.jsx("div",{children:p.text})})]},y))]}),lt.jsxs(Py,{children:[lt.jsx(Jy,{children:"PAROLE UTILI:"}),lt.jsx(vE,{children:a.vocabulary.slice(0,10).map((p,y)=>lt.jsx(bE,{bgcolor:f,children:lt.jsx("span",{children:p.word})},y))})]}),lt.jsxs(xE,{children:[lt.jsxs(Fy,{color:"#fff",textcolor:"#1976d2",onClick:i,children:[lt.jsx("span",{role:"img","aria-label":"sweat"}),"MAGARI DOPO"]}),lt.jsxs(Fy,{color:"#2ecc71",onClick:s,children:[lt.jsx("span",{role:"img","aria-label":"success"}),"FATTO!"]})]})]},a.id)}),lt.jsx(Qy,{position:"right",onClick:i,style:{cursor:"pointer"}})]})},ME=[{id:1,title:"AL RISTORANTE",roles:["CLIENTE","CAMERIERE"],sentences:[{text:"Vorresti un tavolo per due persone ma non hai prenotato.",translation:"I would like to book a table for two people.",completed:!1},{text:"Vorresti sapere se ci sono opzioni vegane.",translation:"Could you bring me the menu, please?",completed:!1},{text:"Vorresti pagare con la carta di credito e lasciare una mancia, ma non sai se lasciare la mancia in contanti o con la carta.",translation:"I am ready to order.",completed:!1}],vocabulary:[{word:"prenotare",translation:"to book"},{word:"apparecchiare",translation:"table"},{word:"sedersi",translation:"menu"},{word:"ordinare",translation:"to order"},{word:"menù",translation:"please"},{word:"conto",translation:"bill"},{word:"cameriere",translation:"waiter"},{word:"allergia",translation:"water"},{word:"contorno",translation:"starter"},{word:"dolce",translation:"dessert"}]},{id:2,title:"IN BIBLIOTECA",roles:["UTENTE","BIBLIOTECARIO"],sentences:[{text:"Vorresti sapere dove si trova un libro specifico ma non conosci il reparto.",translation:"Could you tell me where I can find a specific book?",completed:!1},{text:"Vorresti iscriverti alla biblioteca e chiedere quali documenti servono.",translation:"I’d like to register for a library card; what documents do I need?",completed:!1},{text:"Vorresti sapere come rinnovare un prestito perché il termine sta per scadere.",translation:"How can I renew my loan? The due date is coming up.",completed:!1}],vocabulary:[{word:"prestito",translation:"loan"},{word:"reparto",translation:"section"},{word:"iscriversi",translation:"to register"},{word:"tessera",translation:"card"},{word:"scadenza",translation:"due date"},{word:"restituire",translation:"to return"},{word:"silenzio",translation:"librarian"},{word:"consultazione",translation:"consultation"},{word:"catalogo",translation:"catalog"},{word:"sala studio",translation:"study room"}]},{id:3,title:"IN FARMACIA",roles:["CLIENTE","FARMACISTA"],sentences:[{text:"Vorresti acquistare un antinfiammatorio senza prescrizione.",translation:"I’d like to buy an over-the-counter anti-inflammatory.",completed:!1},{text:"Vorresti sapere se un medicinale può dare effetti collaterali con un altro farmaco che stai assumendo.",translation:"Can this medicine interact with another drug I’m taking?",completed:!1},{text:"Vorresti chiedere il prezzo di un prodotto dermatologico specifico.",translation:"How much does this skincare product cost?",completed:!1}],vocabulary:[{word:"ricetta",translation:"prescription"},{word:"farmaco",translation:"medicine"},{word:"effetti collaterali",translation:"side effects"},{word:"tessera sanitaria",translation:"interaction"},{word:"antinfiammatorio",translation:"anti-inflammatory"},{word:"pomata",translation:"ointment"},{word:"dosaggio",translation:"dosage"},{word:"antidolorifico",translation:"painkiller"},{word:"ricarica",translation:"refill"},{word:"farmacista",translation:"pharmacist"}]},{id:4,title:"ALL'UFFICIO POSTALE",roles:["CLIENTE","IMPIEGATO POSTALE"],sentences:[{text:"Vorresti spedire un pacco internazionale e chiedere le tariffe.",translation:"I’d like to send an international package; what are the rates?",completed:!1},{text:"Vorresti sapere quanto tempo ci vuole per una consegna standard.",translation:"How long does standard delivery take?",completed:!1},{text:"Vorresti ritirare una raccomandata ma non hai con te il codice esatto.",translation:"I’m here to collect a registered letter, but I don’t have the exact code.",completed:!1}],vocabulary:[{word:"pacco",translation:"package"},{word:"spedizione",translation:"shipment"},{word:"raccomandata",translation:"registered mail"},{word:"tariffa",translation:"rate"},{word:"consegna",translation:"delivery"},{word:"ufficio postale",translation:"post office"},{word:"francobollo",translation:"stamp"},{word:"modulo",translation:"form"},{word:"prezzo",translation:"tracking"},{word:"ritiro",translation:"pickup"}]},{id:5,title:"AL BANCO DEL SUPERMERCATO",roles:["CLIENTE","COMMESSO"],sentences:[{text:"Vorresti sapere dov’è il banco dei surgelati.",translation:"Could you tell me where the frozen foods section is?",completed:!1},{text:"Vorresti chiedere se hanno prodotti senza glutine.",translation:"Do you have any gluten-free products?",completed:!1},{text:"Vorresti sapere il prezzo al chilo di un formaggio tipico.",translation:"What is the price per kilo of this cheese?",completed:!1}],vocabulary:[{word:"surgelati",translation:"frozen foods"},{word:"reparto",translation:"department"},{word:"offerta",translation:"offer"},{word:"scaffale",translation:"shelf"},{word:"glutine",translation:"gluten"},{word:"prezzo al chilo",translation:"price per kilo"},{word:"cassa",translation:"checkout"},{word:"scontrino",translation:"receipt"},{word:"promozione",translation:"promotion"},{word:"cliente",translation:"customer"}]},{id:6,title:"IN ALBERGO",roles:["OSPITE","RECEPTIONIST"],sentences:[{text:"Vorresti prenotare una camera matrimoniale per due notti.",translation:"I’d like to book a double room for two nights.",completed:!1},{text:"Vorresti chiedere se il prezzo include la colazione.",translation:"Does the rate include breakfast?",completed:!1},{text:"Vorresti sapere a che ora è il check-out.",translation:"What time is check-out?",completed:!1}],vocabulary:[{word:"prenotazione",translation:"reservation"},{word:"camera matrimoniale",translation:"double room"},{word:"colazione",translation:"breakfast"},{word:"mezza pensione",translation:"check-in"},{word:"tassa di soggiorno",translation:"check-out"},{word:"tariffa",translation:"rate"},{word:"chiave",translation:"key"},{word:"reception",translation:"reception"},{word:"servizio in camera",translation:"room service"},{word:"balcone",translation:"balcony"}]},{id:7,title:"ALLA STAZIONE FERROVIARIA",roles:["VIAGGIATORE","BIGLIETTAIO"],sentences:[{text:"Vorresti acquistare un biglietto di sola andata per Roma.",translation:"I’d like a one-way ticket to Rome.",completed:!1},{text:"Vorresti sapere da quale binario parte il prossimo treno per Milano.",translation:"Which platform does the next train to Milan depart from?",completed:!1},{text:"Vorresti chiedere se è possibile cambiare il biglietto per un altro orario.",translation:"Can I change my ticket to a different departure time?",completed:!1}],vocabulary:[{word:"convalidare",translation:"ticket"},{word:"viaggiare",translation:"one-way"},{word:"rimandare",translation:"return"},{word:"binario",translation:"platform"},{word:"ritardo",translation:"delay"},{word:"orario",translation:"timetable"},{word:"vagone",translation:"train"},{word:"viaggio",translation:"journey"},{word:"prenotazione",translation:"reservation"},{word:"bigliettaio",translation:"ticket clerk"}]},{id:8,title:"DAL BANCO PIZZA DA ASPORTO",roles:["CLIENTE","PIZZAIOLO"],sentences:[{text:"Vorresti ordinare una pizza con fiori di zucca e burrata.",translation:"I’d like a Margherita pizza with extra mozzarella.",completed:!1},{text:"Vorresti chiedere quanto tempo ci vorrà per l’asporto.",translation:"How long will it take for the takeaway?",completed:!1},{text:"Vorresti sapere se è possibile avere l’impasto integrale.",translation:"Is it possible to have whole-wheat dough?",completed:!1}],vocabulary:[{word:"prenotare",translation:"takeaway"},{word:"cuocere",translation:"dough"},{word:"tagliare",translation:"mozzarella"},{word:"condimenti",translation:"toppings"},{word:"forno a legna",translation:"wood-fired oven"},{word:"consegna",translation:"delivery"},{word:"cottura",translation:"cooking"},{word:"taglia",translation:"size"},{word:"asporto",translation:"menu"},{word:"farina",translation:"customer"}]},{id:9,title:"ALL'EDICOLA",roles:["CLIENTE","TABACCAIO"],sentences:[{text:"Vorresti comprare l'ultima edizione di una rivista e chiedere il prezzo.",translation:"I’d like to buy cigarettes; what is the price per pack?",completed:!1},{text:"Vorresti sapere se vendono gratta e vinci.",translation:"Do you sell scratch-off lottery tickets?",completed:!1},{text:"Vorresti chiedere se è possibile utilizzare il telefono per pagare.",translation:"Where can I find the postcards in the shop?",completed:!1}],vocabulary:[{word:"comprare",translation:"cigarettes"},{word:"rivista",translation:"scratch-off tickets"},{word:"cartolina",translation:"postcards"},{word:"lotteria",translation:"lottery"},{word:"accendino",translation:"lighter"},{word:"giornale",translation:"betting slip"},{word:"allegato",translation:"receipt"},{word:"edicola",translation:"newsstand"},{word:"orari di apertura",translation:"cigar"},{word:"tabaccheria",translation:"tobacco shop"}]},{id:10,title:"IN PALESTRA",roles:["ISCRITTO","ISTRUTTORE"],sentences:[{text:"Vorresti chiedere informazioni sulle tariffe mensili e il tipo di abbonamenti.",translation:"Could you give me information about your monthly rates and membership plans?",completed:!1},{text:"Vorresti sapere quali corsi di gruppo vengono offerti e gli orari disponibili.",translation:"What group classes do you offer and when?",completed:!1},{text:"Vorresti chiedere se è possibile prenotare una lezione privata con una personal trainer.",translation:"Is it possible to book a private personal training session?",completed:!1}],vocabulary:[{word:"allenarsi",translation:"membership"},{word:"iscriversi",translation:"rate"},{word:"impegnarsi",translation:"private lesson"},{word:"attrezzi",translation:"personal trainer"},{word:"lezioni",translation:"weight room"},{word:"piscina",translation:"group class"},{word:"istruttore",translation:"instructor"},{word:"orario",translation:"schedule"},{word:"spogliatoio",translation:"locker room"},{word:"iscrizione",translation:"enrollment"}]},{id:11,title:"IN SPIAGGIA",roles:["BAGNANTE","GESTORE"],sentences:[{text:"Vorresti chiedere se è possibile prenotare un ombrellone con due lettini per il giorno.",translation:"Could you give me information about your monthly rates and membership plans?",completed:!1},{text:"Vorresti sapere se il prezzo cambia in base al mese.",translation:"What group classes do you offer and when?",completed:!1},{text:"Vorresti chiedere se è possibile utilizzare il campo da pallavolo.",translation:"Is it possible to book a private personal training session?",completed:!1}],vocabulary:[{word:"utilizzare",translation:"membership"},{word:"prenotare",translation:"rate"},{word:"nuotare",translation:"private lesson"},{word:"abbronzarsi",translation:"personal trainer"},{word:"sdraio",translation:"weight room"},{word:"lettino",translation:"group class"},{word:"ombrellone",translation:"instructor"},{word:"ristorantino",translation:"schedule"},{word:"doccia",translation:"locker room"},{word:"sconto",translation:"enrollment"}]}],DE=jt.div`
   min-height: 100vh;
   background: #f0f2f5;
@@ -216,4 +263,4 @@ Error generating stack: `+n.message+`
   color: #7f8c8d;
   margin: 10px 0 0;
 `;function CE(){const[a,i]=X.useState(0),[s,o]=X.useState(ME),c=()=>{i(m=>(m+1)%s.length)},d=()=>{i(m=>(m+1)%s.length)},f=m=>{o(g=>g.map((p,y)=>y===a?{...p,sentences:p.sentences.map((b,T)=>T===m?{...b,completed:!b.completed}:b)}:p))};return lt.jsxs(DE,{children:[lt.jsxs(OE,{children:[lt.jsx(RE,{children:"Italian Practice Cards"}),lt.jsx(wE,{children:"Swipe left if too difficult, swipe up when done"})]}),lt.jsx(t0,{mode:"wait",children:lt.jsx(EE,{card:s[a],onSwipeLeft:c,onSwipeUp:d,onSentenceComplete:f},a)})]})}Tb.createRoot(document.getElementById("root")).render(lt.jsx(X.StrictMode,{children:lt.jsx(CE,{})}));
-//# sourceMappingURL=index-Dj4IiPWM.js.map
+//# sourceMappingURL=index-B1uYg49r.js.map
